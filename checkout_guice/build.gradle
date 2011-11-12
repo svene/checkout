@@ -1,0 +1,40 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.6
+version = '1.0'
+
+repositories {
+//	mavenRepo urls: ["file://${System.properties['user.home']}/.m2/repository/", "http://guice-maven.googlecode.com/svn/trunk"]
+	mavenCentral()
+}
+
+idea {
+	project {
+		jdkName = '1.6'
+	}
+	module {
+		downloadSources = true
+		downloadJavadoc = false
+	}
+}
+
+configurations {
+    compile {
+        description = 'compile classpath'
+        transitive = true
+    }
+    runtime {
+        extendsFrom compile
+    }
+}
+
+dependencies {
+	compile 'com.google.inject:guice:3.0'
+	testCompile group: 'junit', name: 'junit', version: '4.8'
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '1.0-milestone-5'
+}
+
