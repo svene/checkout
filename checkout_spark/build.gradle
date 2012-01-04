@@ -24,6 +24,9 @@ repositories {
 }
 
 configurations {
+	// It seems that commons-io has the wrong group-id (commons-io) in 'http://repo2.maven.org/maven2/commons-io/commons-io/1.3.2/commons-io-1.3.2.pom'
+	// And anyway it seems not to be required even at runtime (at least for this simple example).
+	// Therefore it is excluded (if it is not excluded gradle reports this inconsistency as error):
 	compile.exclude group: 'org.apache.commons', module: 'commons-io'
 }
 
