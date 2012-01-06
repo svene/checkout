@@ -1,0 +1,34 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+mainClassName = 'checkout.markdownpapers.Main'
+
+group='org.svenehrke'
+version = '0.0.2'
+
+idea {
+	project {
+		jdkName = '1.6'
+	}
+	module {
+		downloadSources = true
+		downloadJavadoc = false
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile 'org.tautua.markdownpapers:markdownpapers-core:1.2.5'
+	testCompile group: 'junit', name: 'junit', version: '4.8'
+}
+
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '1.0-milestone-7'
+}
+

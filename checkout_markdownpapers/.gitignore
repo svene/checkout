@@ -1,0 +1,7 @@
+out.html
+out/
+gradle/
+build/
+.directory_template/
+.gradle/
+
