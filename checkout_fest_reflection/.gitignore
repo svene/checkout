@@ -1,0 +1,6 @@
+out/
+build/
+.directory_template/
+.gradle/
+
+
