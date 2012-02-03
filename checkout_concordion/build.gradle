@@ -1,0 +1,49 @@
+// Tested with gradle-1.0-milestone-3
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+version = '1.1.0.1'
+archivesBaseName = 'concordion-extensions-demo'
+eclipseProject.projectName = 'concordion-extensions-demo-selenium2'
+sourceCompatibility = 1.6
+
+idea {
+	project {
+		jdkName = '1.6'
+	}
+	module {
+		downloadSources = false
+		downloadJavadoc = false
+	}
+}
+
+repositories {
+	mavenCentral()
+//	mavenRepo urls: 'http://concordion.googlecode.com/svn/repos/snapshots'
+}
+
+slf4jVersion    = '1.6.1'
+seleniumVersion = '2.10.0'
+
+dependencies {
+	testCompile 'org.concordion:concordion-extensions:1.1.0',
+		"org.seleniumhq.selenium:selenium-java:$seleniumVersion",
+		"org.slf4j:slf4j-api:$slf4jVersion"
+
+	runtime "org.slf4j:slf4j-jdk14:$slf4jVersion"
+}
+
+task createDistZip(type: Zip) {
+	from '.'
+	exclude '.*'
+	exclude 'bin', 'build', 'target'
+}
+
+test {
+	include '**/GroupA.*'
+	systemProperties['concordion.output.dir'] = "$reportsDir/spec"
+}
+
+test.dependsOn cleanTest
+

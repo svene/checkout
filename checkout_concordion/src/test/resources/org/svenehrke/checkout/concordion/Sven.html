@@ -1,0 +1,14 @@
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+<link href="../../concordion.css" rel="stylesheet" type="text/css" />
+<body>
+
+<h1>Hello World!</h1>
+
+<div class="example">
+<h4>Example</h4>
+	The greeting for user <span concordion:set="#firstName">Bob</span>
+	will be <span concordion:assertEquals="doSomething(#firstName)">Hello Bob!</span>
+</div>
+
+</body>
+</html>
