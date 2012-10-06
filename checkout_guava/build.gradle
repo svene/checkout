@@ -1,0 +1,36 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'maven'
+apply plugin: 'application'
+
+mainClassName = 'org.svenehrke.checkout.guava.Main'
+
+group='org.svenehrke'
+version = '0.0.2'
+
+idea {
+	project {
+		jdkName = '1.6'
+	}
+	module {
+		downloadSources = false
+		downloadJavadoc = false
+	}
+}
+
+repositories {
+	mavenRepo urls: "${userDeploymentRepoBaseURL.replace('/localhost', '')}/releases"
+	mavenCentral()
+}
+
+
+dependencies {
+//	compile 'com.google.inject:guice:3.0'
+	testCompile group: 'junit', name: 'junit', version: '4.8'
+}
+
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '1.2'
+}
+
