@@ -13,19 +13,18 @@ idea {
 		jdkName = '1.6'
 	}
 	module {
-		downloadSources = false
+		downloadSources = true
 		downloadJavadoc = false
 	}
 }
 
 repositories {
-	mavenRepo urls: "${userDeploymentRepoBaseURL.replace('/localhost', '')}/releases"
 	mavenCentral()
 }
 
 
 dependencies {
-//	compile 'com.google.inject:guice:3.0'
+	compile 'com.google.guava:guava:13.0.1'
 	testCompile group: 'junit', name: 'junit', version: '4.8'
 }
 
