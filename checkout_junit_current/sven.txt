@@ -1,0 +1,5 @@
+see
+
+	http://cwd.dhemery.com/2010/12/junit-rules/
+	http://blog.schauderhaft.de/2009/10/04/junit-rules/
+

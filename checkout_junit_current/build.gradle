@@ -1,0 +1,35 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'maven'
+apply plugin: 'application'
+
+mainClassName = 'org.svenehrke.checkout.junit.Main'
+
+group='org.svenehrke'
+version = '0.0.2'
+
+idea {
+	project {
+		jdkName = '1.6'
+	}
+	module {
+		downloadSources = true
+		downloadJavadoc = false
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+//	compile 'com.google.inject:guice:3.0'
+	testCompile 'junit:junit:4.10'
+}
+
+
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '1.2'
+}
+

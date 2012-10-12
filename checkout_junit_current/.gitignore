@@ -1,0 +1,8 @@
+.directory_template/
+build/
+out/
+*.iml
+*.ipr
+*.iws
+
+
