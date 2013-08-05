@@ -1,0 +1,9 @@
+Demonstrates how to use an in-memory apache derby database.
+
+In contrast to h2 it seems to be really in memory:
+
+  http://antoniogoncalves.org/2009/07/05/derby-10-5-1-1-is-really-an-in-memory-database/
+
+Sven, 5.8.2013
+
+
