@@ -1,0 +1,8 @@
+start with:
+
+	gradle jettyRun
+
+navigate to
+
+	localhost:8080/springmvc/welcome
+

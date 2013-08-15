@@ -1,0 +1,9 @@
+start with:
+
+	gradle jettyRun
+
+navigate to
+
+	http://localhost:8080/springmvc/movie/http://localhost:8080/springmvc/movie/ironMan
+	http://localhost:8080/springmvc/movie/SpiderMan4
+
