@@ -1,0 +1,2 @@
+setup spring with persistence (JSE, JPA, derby)
+
