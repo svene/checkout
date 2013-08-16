@@ -30,15 +30,17 @@ public class PersistenceJPAConfig {
 		emfb.setDataSource(dataSource());
 //		EmbeddedDatabase derby = new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.DERBY).build();
 //		emfb.setDataSource(derby);
+
+		// No need for 'persistence.xml' because of Spring's Entity scanning support:
 		emfb.setPackagesToScan(new String[]{"org.svenehrke.checkout.jpaspring"});
 
 		EclipseLinkJpaVendorAdapter vendorAdapter = new EclipseLinkJpaVendorAdapter();
 
 		emfb.setJpaVendorAdapter(vendorAdapter);
 		emfb.setJpaProperties(additionalProperties());
-		emfb.setLoadTimeWeaver(new InstrumentationLoadTimeWeaver()); // see http://stackoverflow.com/questions/10769051/eclipselinkjpavendoradapter-instead-of-hibernatejpavendoradapter-issue
 
-		// -javaagent:/path-to-your-javaagent/org.springframework.instrument-3.1.1.RELEASE.jar
+		// see http://stackoverflow.com/questions/10769051/eclipselinkjpavendoradapter-instead-of-hibernatejpavendoradapter-issue
+		emfb.setLoadTimeWeaver(new InstrumentationLoadTimeWeaver());
 
 		return emfb;
 	}
