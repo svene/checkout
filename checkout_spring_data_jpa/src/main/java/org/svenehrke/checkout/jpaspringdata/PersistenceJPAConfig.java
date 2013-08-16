@@ -21,6 +21,18 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 @ImportResource("classpath*:*spring-data-config.xml")
+/**
+ *
+ * See also description (which can be found here: http://www.baeldung.com/2011/12/13/the-persistence-layer-with-spring-3-1-and-jpa/):
+ *
+ *  There is a relatively small difference between the way Spring is configured in
+ *  XML and the new Java based configuration – in XML, a reference to another bean
+ *  can point to either the bean or a bean factory for that bean. In Java however,
+ *  since the types are different, the compiler doesn’t allow it, and so the
+ *  EntityManagerFactory is first retrieved from it’s bean factory and then passed to the transaction manager:
+ *
+ *  txManager.setEntityManagerFactory( this.entityManagerFactoryBean().getObject() );
+ */
 public class PersistenceJPAConfig {
 
 	@Bean
