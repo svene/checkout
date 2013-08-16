@@ -5,3 +5,7 @@ run with jvm arg:
 	-javaagent:0_artifacts/spring-instrument-3.2.4.RELEASE.jar
 
 
+See SpringData JPA Documentation:
+
+	http://static.springsource.org/spring-data/data-jpa/docs/current/reference/html/
+
