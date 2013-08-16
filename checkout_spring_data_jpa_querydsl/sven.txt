@@ -1,0 +1,6 @@
+see:
+
+	http://stackoverflow.com/questions/6431026/generating-jpa2-metamodel-from-a-gradle-build-script
+
+	second answer
+
