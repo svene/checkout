@@ -1,0 +1,7 @@
+Use JPA with SpringData (JSE, JPA, SpringData, derby)
+
+run with jvm arg:
+
+	-javaagent:0_artifacts/spring-instrument-3.2.4.RELEASE.jar
+
+
