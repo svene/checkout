@@ -1,0 +1,7 @@
+Checkout oval (great validation fw (also able to do DbC):
+
+	http://oval.sourceforge.net/
+
+Uses assertJ:
+
+  https://github.com/joel-costigliola/assertj-core
