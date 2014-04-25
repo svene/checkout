@@ -1,0 +1,20 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'maven'
+
+group = 'org.svenehrke.TTT'
+version = '1.0-SNAPSHOT'
+
+
+repositories {
+     mavenCentral()
+}
+dependencies {
+	//compile ''
+	compile 'org.eclipse.jgit:org.eclipse.jgit:3.3.1.201403241930-r'
+	testCompile 'junit:junit:4.11'
+}
+
+sourceCompatibility = 1.7
+//targetCompatibility = 1.7
+
