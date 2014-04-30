@@ -1,0 +1,1 @@
+see http://www.javacodegeeks.com/2014/04/using-assertj-and-awaitility-together-thanks-to-java-8-and-lambdas.html

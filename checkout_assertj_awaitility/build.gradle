@@ -1,0 +1,19 @@
+apply plugin: 'java'
+
+group = 'org.svenehrke.checkout.assertjawaitility'
+version = '1.0-SNAPSHOT'
+
+
+repositories {
+     mavenCentral()
+}
+dependencies {
+	//compile ''
+	testCompile 'org.assertj:assertj-core:1.6.0'
+	testCompile 'com.jayway.awaitility:awaitility:1.5.0'
+	testCompile 'junit:junit:4.11'
+}
+
+sourceCompatibility = 1.8
+//targetCompatibility = 1.8
+
