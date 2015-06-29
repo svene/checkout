@@ -8,18 +8,7 @@ mainClassName = 'org.svenehrke.checkout.hadoop.Main'
 group='org.svenehrke'
 version = '0.0.1'
 
-idea {
-	project {
-		jdkName = '1.6'
-	}
-	module {
-		downloadSources = true
-		downloadJavadoc = false
-	}
-}
-
 repositories {
-	mavenRepo urls: "${userDeploymentRepoBaseURL.replace('/localhost', '')}/releases"
 	mavenCentral()
 }
 
@@ -31,26 +20,4 @@ dependencies {
 	testCompile group: 'junit', name: 'junit', version: '4.8'
 }
 
-
-// see http://evgeny-goldin.com/wiki/Gradle (section 'Setting the repository URL at the time the DAG is ready')
-gradle.taskGraph.whenReady { tg ->
-	if (!tg.hasTask(':makeRelease')) {
-		version += '-SNAPSHOT'
-		uploadArchives.repositories['mavenDeployer'].repository.url = "${userDeploymentRepoBaseURL}/snapshots"
-	}
-}
-
-uploadArchives {
-	repositories.mavenDeployer {
-		repository(url: "${userDeploymentRepoBaseURL}/releases")
-	}
-}
-
-task makeSnapshot(dependsOn: 'uploadArchives')
-
-task makeRelease(dependsOn: 'uploadArchives')
-
-task wrapper(type: Wrapper) {
-	gradleVersion = '1.0-milestone-5-20110927091445+0200'
-}
 
