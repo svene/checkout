@@ -1,0 +1,10 @@
+1. experimented with nashorn and unirest/java
+
+* run: ./init.sh
+* run: ./run.sh
+
+2. experimented with nodeunirest/js
+
+* see: http://unirest.io/nodejs.html
+* npm install --save
+* node d2.js
